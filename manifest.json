@@ -2,11 +2,10 @@
     "manifest_version": 2,
     "name": "Popout Tab!",
     "author": "Jan Haan",
-    "version": "1.0",
+    "version": "1.1",
     "homepage_url": "https://github.com/NonsenseInc/Popout-Tab",
     "description": "WebExtension to popout the currently active tab as a popup window (without toolbar et cetera).",
     "offline_enabled": true,
-
     "icons": {
         "16": "icons/23cf-16.png",
         "32": "icons/23cf-32.png",
@@ -15,7 +14,8 @@
         "128": "icons/23cf-128.png"
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
     "browser_action": {
         "default_icon": {
@@ -30,5 +30,14 @@
         "scripts": [
             "lib/background.js"
         ]
+    },
+    "options_ui": {
+        "page": "etc/options.html",
+        "browser_style": true
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "popout@sinnfrei.xyz"
+        }
     }
 }
